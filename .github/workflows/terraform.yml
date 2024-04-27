@@ -5,12 +5,12 @@ on:
       - main
       - stage
     paths:
-      - terrafrom/**
+      - terraform/**
   pull_request:
     branches:
       - main
     paths:
-      - terrafrom/**
+      - terraform/**
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
