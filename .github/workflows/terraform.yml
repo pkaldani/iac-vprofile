@@ -61,7 +61,7 @@ jobs:
         if: contains(github.ref, 'main') && github.event_name == 'push'
         uses: dflook/terraform-apply@v1
         with:
-          path: my-terraform-config
+          path: ./terraform
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
