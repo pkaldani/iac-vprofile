@@ -55,11 +55,13 @@ jobs:
       - name: terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-
-      - name: Terraform Apply
+      
+      - name: terraform apply
         id: Apply
         if: contains(github.ref, 'main') && github.event_name == 'push'
-        run: terraform apply --auto-appove
+        uses: dflook/terraform-apply@v1
+        with:
+          path: my-terraform-config
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
